@@ -20,7 +20,7 @@ app.get("/contact-us", (req, res) => {
 
 app.post("/contact-us",(req,res,next)=>{
   console.log("handling const for post",req.url,req.method);
-  res.send("We Will contact with you shortly")
+  res.send("<h1>We Will contact with you shortly</h1>")
 })
 
 const port = 3002;
