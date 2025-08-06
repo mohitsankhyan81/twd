@@ -1,5 +1,5 @@
 const express=require('express');
-
+const useRouter=require('./routes/usetrouter');
 const app=express();
 
 app.use((req,res,next)=>{
@@ -9,22 +9,18 @@ app.use((req,res,next)=>{
 
 app.use(express.urlencoded());
 
-app.get("/",(req,res,next)=>{
-  res.send(`<h1>Welcome to my home page</h1>
-    <a href="/add-home">Add Home</a>`
-  );
-});
+app.use(useRouter);
 
-app.get("/add-home",(req,res,next)=>{
+app.get("/host/add-home",(req,res,next)=>{
   res.send(`<h1>Register your home hear<br>we upload this on the internet<br>term and condition apply</h1>
-    <form action="/add-home" method="POST">
+    <form action="/host/add-home" method="POST">
       <input type="text" name="housename" placeholder="enter your house apparment"/>
       <input type="submit" />
     </form>`
   );
 })
 
-app.post("/add-home",(req,res,next)=>{
+app.post("/host/add-home",(req,res,next)=>{
   console.log(req.body);
   res.send(`<h1>This is the Fantastic page</h1>
     <a href="/">GO TO HOME</a>`
