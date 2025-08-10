@@ -12,4 +12,4 @@ router.post("/add-home", (req, res) => {
   res.sendFile(path.join(root,"view","home-edit.html"))
 });
 
-module.e xports = router;
+module.exports = router;
