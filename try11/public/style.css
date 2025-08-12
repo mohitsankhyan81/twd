@@ -1,0 +1,18 @@
+h1{
+  color: black;
+}
+header{
+  height: 50px;
+  width: 80%;
+  align-items: center;
+  background-color: red;
+}
+main{
+  height: 80px;
+  width:45%;
+  background-color: gray;
+}
+a{
+  color:black;
+  size: 23px;
+}
