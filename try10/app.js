@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const userRouter = require('./routes/userrouter');
 const hostRouter = require('./routes/hostrouter');
-const root=require('./utility/pathutil');
+const root=require('../Practice-set/lec-10-practice1/utility/pathutil');
 const app = express();
 
 app.use((req, res, next) => {
