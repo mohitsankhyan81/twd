@@ -4,8 +4,11 @@ const path = require('path');
 const app = express();
 const root = require('./utility/pathutil');
 
+app.use(express.static(path.join(root,'public')));
+ 
 const homeRouter = require('./router/homeRouter');
 const contactRouter = require('./router/contactRoute');
+const { execArgv } = require('process');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(homeRouter);
