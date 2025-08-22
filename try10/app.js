@@ -1,10 +1,11 @@
 const path = require('path');
 const express = require('express');
 const userRouter = require('./routes/userrouter');
-const hostRouter = require('./routes/hostrouter');
+const {hostRouter} = require('./routes/hostrouter');
 const root=require('../Practice-set/lec-10-practice1/utility/pathutil');
 const app = express();
-
+app.set('view engine','ejs');
+app.set('views','views');
 app.use(express.static(path.join(root,'public')));
 
 app.use((req, res, next) => {
