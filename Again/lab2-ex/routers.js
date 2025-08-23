@@ -13,7 +13,7 @@ const router=(req,res)=>{
     filePath=path.join(__dirname,"view","men.html");
   }
 
-  else if(req.url==='/women'){
+  else if(req.url==='/woman'){
     filePath=path.join(__dirname,"view","woman.html");
   }
   else if(req.url==='/kid'){
