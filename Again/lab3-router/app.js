@@ -18,6 +18,6 @@ app.use("/",(req,res)=>{
 })
 
 const port=4664;
-app.listen(port,(req,res)=>{
+app.listen(port,()=>{
   console.log(`http://localhost:${port}`);
 })
