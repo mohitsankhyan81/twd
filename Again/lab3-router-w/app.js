@@ -1,5 +1,5 @@
 const express=require('express');
-
+const bodyparse=require('body-parser')
 const app=express();
 
 app.use((req,res,next)=>{
@@ -26,16 +26,24 @@ app.get("/contact-us",(req,res)=>{
   console.log("this is the /contact-us page");
   res.send(`
       <h1>This is the details form</h1>
-      <form method="POST">
-        <input type="text" placeholder="Enter your name">
-        <input type="email" placeholder="Enter your email">
+      <form method="POST" action="/contact-us">
+        <input type="text" name="name" placeholder="Enter your name">
+        <input type="email" name="email" placeholder="Enter your email">
         <button type="submit">Submit</button>
       </form>
     `)
 });
 
+app.use((req,res,next)=>{
+  console.log("post file",req.url,req.method);
+  next();
+})
+
+app.use(bodyparse.urlencoded());
+
+
 app.post("/contact-us",(req,res)=>{
-  console.log("Thanks For your details we constact with you sortaly");
+  console.log("Thanks For your details we constact with you sortaly",req.method,req.url,req.body);
   res.send("<h1>Thanks for your details. We contact with you shortly</h1>");
 })
 
