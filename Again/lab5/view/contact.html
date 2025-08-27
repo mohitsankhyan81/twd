@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>
+  <header class="bg-red-400 text-4xl text-white flex justify-center items-center pt-5 pb-5">
+    <h1 class="bg-slate-200 text-3xl text-white flex justify-center items-center">
       Enter your home hear ---------
     </h1>
   </header>
-  <main>
+  <main class="bg-red-100 text-2xl text-white flex items-center justify-center pt-5 pb-5">
     <form action="/add-home" method="post">
-      <input type="text" placeholder="Enter your home hear" name="houseName">
+      <input class="border-3 border-amber-950" type="text" placeholder="Enter your home hear" name="houseName">
       <input type="submit" label="Submit">
     </form>
   </main>

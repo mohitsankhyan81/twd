@@ -9,6 +9,8 @@ const app=express();
 const rootdir=require('./util/path')
 const userRouter=require('./router/user');
 const contactRouter=require('./router/contact-us');
+
+app.use(express.static(path.join(rootdir,'public')));
 app.use((req,res,next)=>{
   console.log("We will recive the requirst first",req.url,req.method);
   next();
