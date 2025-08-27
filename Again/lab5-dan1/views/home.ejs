@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="input.css">
+</head>
+<body class="bg-green-200">
+  <header class="bg-red-400 text-2xl flex justify-center items-center pt-3 pb-3">
+    <h1 class="bg-slate-300 text-xl flex items-center justify-center ">Welcome to the home page</h1>
+  </header>
+  <main>
+    <a href="/add-home" class="bg-slate-300 text-x1 text-white flex justify-center items-center pt-2 pb-2">Add Home</a>
+  </main>
+
+  <div>
+    <h1>here the house names: </h1>
+    <ul>
+      <% registeredhouse.forEach(function(home){%>
+        <li>
+          <%=home.houseName%>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>
