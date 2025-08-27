@@ -7,17 +7,16 @@ const path=require('path');
 const rootdir=require('../util/path')
 contactRouter.get("/add-home",(req,res,next)=>{
   console.log("there we post our home",req.body);
-  res.sendFile(path.join(rootdir,"view","contact.html"))
+  res.sendFile(path.join(rootdir,"views","contact.html"))
 });
 
-const registeredHomes=[];
-
+const registeredhouse=[];
 
 contactRouter.post("/add-home",(req,res,next)=>{
-  console.log("this is the sumited form",req.body,{houseName:req.body.houseName});
-  registeredHomes.push(req.boby.houseName);
-  res.sendFile(path.join(rootdir,"view","add-contact.html"));
+  console.log("this is the sumited form",req.body,req.body.houseName);
+  registeredhouse.push({houseName:req.body.houseName});
+  res.sendFile(path.join(rootdir,"views","add-contact.html"));
 })
 
 exports.contactRouter=contactRouter;
-exports.registeredHomes=registeredHomes;
+exports.registeredhouse=registeredhouse;

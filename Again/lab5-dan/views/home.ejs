@@ -13,6 +13,16 @@
   </header>
   <main>
     <a href="/add-home" class="bg-slate-300 text-x1 text-white flex justify-center items-center pt-2 pb-2">Add Home</a>
-  </main>
+    </main> 
+<div>
+  <h1>Your Added house:- </h1>
+  <ul>
+    <% registeredhouse.forEach(function(home){%>
+      <li>
+        <%= home.houseName %>
+      </li>
+    <%}) %>
+  </ul>
+</div>
 </body>
 </html>

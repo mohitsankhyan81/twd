@@ -8,7 +8,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind":"npx @tailwindcss/cli -i ./view/input.css -o ./public/style.css --watch",
+    "tailwind": "tailwindcss -i ./view/input.css -o ./public/output.css --watch",
     "start": "nodemon app.js & npm run tailwind"
   },
   "dependencies": {
