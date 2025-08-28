@@ -3,10 +3,11 @@ const path=require('path');
 const userRouter=express.Router();
 
 
-const rootdir=require('../util/path')
+const rootdir=require('../util/path');
+const { registedhouse } = require('./contact-us');
 userRouter.get("/",(req,res,next)=>{
-  console.log("this is home page");
-  res.sendFile(path.join(rootdir,"view","home.html"));
+  console.log(registedhouse);
+  res.render('home',{registedhouse,registedhouse});
 })
 
 module.exports=userRouter;
