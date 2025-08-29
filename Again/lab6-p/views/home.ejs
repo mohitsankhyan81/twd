@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bg-blue-300 text-black text-4xl flex justify-center items-center pt-4 pb-4 ">
+    <h1>Welcome to our home page</h1>
+  </header>
+  <main class="m-10">
+    <a href="/add-home" class="bg-yellow-200 pt-5 pb-5 pl-3 pr-3 flex items-baseline justify-center text-3px text-black">Add home</a>
+  </main>
+
+  <div>
+    <h1 class="bg-red-100 p-3 flex justify-center items-center">Here is the entered homes :-</h1>
+    <ul class="bg-blue-200">
+      <% registerHouse.forEach(function(home){ %>
+        <li class="flex justify-center items-center font-bold pb-3">
+          <%= home.houseName %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>
