@@ -8,7 +8,7 @@ const rootdir=require('../util/path');
 
 hostrouter.get("/add-home",(req,res,next)=>{
   console.log('This is our router module');
-  res.sendFile(path.join(rootdir,"views","houseInfo.html"));
+  res.render('houseInfo',{pagetitle:'This is the 2 page'});
 });
 
 const registerHouse=[];
@@ -16,7 +16,7 @@ const registerHouse=[];
 hostrouter.post('/add-home',(req,res,next)=>{
   console.log("This is the form submint section",req.body,req.body.houseName);
   registerHouse.push(req.body);
-  res.sendFile(path.join(rootdir,"views","house-go.html"));
+  res.render('house-go',{pagetitle:'this the done page'});
 })
 exports.registerHouse=registerHouse;
 exports.hostrouter=hostrouter;
