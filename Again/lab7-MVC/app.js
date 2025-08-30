@@ -9,6 +9,7 @@ const userRouter=require('./router/userRouter');
 const {hostrouter}=require('./router/hostRouter');
 
 const bodyparser=require('body-parser');
+const { error } = require('./controllers/home');
 
 
 app.use(express.static(path.join(rootdir,"public")));
@@ -23,10 +24,7 @@ app.use(bodyparser.urlencoded());
 app.use(userRouter);
 app.use(hostrouter);
 
-app.use((req,res,next)=>{
-  console.log("this is 404 page");
-  res.status(404).render('404',{pagetitle:'my name is mohit'});
-});
+app.use(error);
 
 
 const port=3543;

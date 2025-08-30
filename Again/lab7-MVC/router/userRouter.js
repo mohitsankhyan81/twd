@@ -6,10 +6,8 @@ const userRouter=express.Router();
 
 const rootdir=require('../util/path');
 const { registerHouse } = require('./hostRouter');
+const { user } = require('../controllers/home');
 
-userRouter.get("/",(req,res,next)=>{
-  console.log(registerHouse);
-  res.render('home',{registerHouse:registerHouse,pagetitle:'this is the home page'});
-});
+userRouter.get("/",user);
 
 module.exports=userRouter;
