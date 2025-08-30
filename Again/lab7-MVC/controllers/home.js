@@ -1,15 +1,19 @@
+const Home=require('../models/home');
+
 const getAddhome=(req,res,next)=>{
   console.log('This is our router module');
   res.render('houseInfo',{pagetitle:'This is the 2 page'});
 }
 const registerHouse=[];
 const getresult=(req,res,next)=>{
-  console.log("This is the form submint section",req.body,req.body.houseName);
-  registerHouse.push(req.body);
+  console.log("This is the form submint section",req.body);
+  const{houseName,price,location,rating,url}=req.body;
+  const home=new Home(houseName,price,location,rating,url);
+  home.save();
   res.render('house-go',{pagetitle:'this the done page'});
 }
 const user=(req,res,next)=>{
-  console.log(registerHouse);
+  const registerHouse=Home.fetchall();
   res.render('home',{registerHouse:registerHouse,pagetitle:'this is the home page'});
 }
 const error=(req,res,next)=>{
