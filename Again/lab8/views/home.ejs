@@ -1,0 +1,29 @@
+<%-include('partials/header')%>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white text-4xl font-bold flex justify-center items-center py-6 shadow-md">
+    <h1>Welcome to our Home Page</h1>
+  </header>
+
+  <main class="m-10 flex justify-center">
+    <a href="/add-home" class="bg-yellow-400 hover:bg-yellow-500 transition px-6 py-3 rounded-lg shadow font-semibold text-lg text-black">
+      + Add Home
+    </a>
+  </main>
+
+  <div class="px-8">
+    <h1 class="bg-red-200 text-center text-2xl font-bold py-4 rounded-lg shadow mb-6">Here are the entered homes:</h1>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% registerHouse.forEach(function(home){ %>
+        <li class="bg-white shadow-lg rounded-xl p-5 hover:shadow-xl transition">
+          <img src="<%= home.url %>" alt="Home Image" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h2 class="text-xl font-bold mb-2"><%= home.houseName %></h2>
+          <p class="text-gray-700"><span class="font-semibold">Price:</span> $<%= home.price %></p>
+          <p class="text-gray-700"><span class="font-semibold">Location:</span> <%= home.location %></p>
+          <p class="text-gray-700"><span class="font-semibold">Rating:</span> ⭐ <%= home.rating %></p>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>
