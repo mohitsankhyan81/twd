@@ -18,8 +18,12 @@
   </h1>
 <ul>
   <% registerhouse.forEach(home=>{ %>
-    <li>
+    <li type="none">
       <%= home.houseName %>
+      <%= home.price %>
+      <%= home.location %>
+      <%= home.rating %>
+      <%= home.url %>
     </li>
   <% })%>
   </ul>
