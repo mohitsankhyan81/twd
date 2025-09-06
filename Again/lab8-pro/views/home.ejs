@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome in this site</h1>
+  </header>
+  <main>
+    <a href="/add-home">Add home</a>
+  </main>
+  <main>
+    <h2>Here your lists </h2>
+    <ul>
+    <% registerhouse.forEach(home=>{%>
+      <li type="none">
+        <%= home.houseName %>
+        <%= home.price %>
+        <%= home.location %>
+        <%= home.rating %>
+        <%= home.url %>
+      </li>
+    <% }); %>
+    </ul>
+  </main>
+</body>
+</html>
