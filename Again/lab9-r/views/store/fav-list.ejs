@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%- include('../nav/booking') %>
+  <header>
+    <h1>This is our home page</h1>
+  </header>
+  <main>
+    <a href="/add-home">Add home</a>
+  </main>
+
+  <div>
+    <h1>MY FAV LIST</h1>
+
+    <ul>
+      <% registerhouse.forEach(home=>{ %>
+        <li type="none">
+          <br>
+          <br>
+          <%= home.houseName %>
+          <br>
+          <%= home.price %>
+          <br>
+          <%= home.location%>
+          <br>
+          <%= home.rating %>
+          <button>Book</button>
+          <br>
+          <%= home.url %>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
