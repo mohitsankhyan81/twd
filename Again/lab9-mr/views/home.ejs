@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to home page</h1>
+  </header>
+  <main>
+    <a href="/add-home">Add home</a>
+  </main>
+
+  <div>
+    <h1>Here show all the register houses</h1>
+    <ul>
+      <% registerhouses.forEach(home=>{ %>
+        <li type="none">
+          <%= home.houseName %>
+          <%= home.price %>
+          <%= home.location %>
+          <%= home.rating %>
+          <%= home.url %>
+
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
