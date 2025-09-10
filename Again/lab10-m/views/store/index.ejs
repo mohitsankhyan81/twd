@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pagetitle %></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <%- include('../partials/nav') %>
+
+  <!-- Hero Section -->
+  <section class="h-[50vh] bg-gray-800 flex items-center justify-center text-center text-white">
+    <div>
+      <h1 class="text-4xl font-bold mb-4">Welcome to My Homes</h1>
+      <a href="/add-home" class="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 rounded-lg text-black font-semibold">
+        + Add Home
+      </a>
+    </div>
+  </section>
+
+  <!-- Homes List -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-bold text-center mb-8">Available Homes</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% registerHouse.forEach(function(home){ %>
+        <li class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="<%= home.url %>" alt="Home Image" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2"><%= home.houseName %></h3>
+            <p class="text-gray-700">💰 $<%= home.price %></p>
+            <p class="text-gray-700">📍 <%= home.location %></p>
+            <p class="text-gray-700">⭐ <%= home.rating %></p>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-4">
+    © 2025 My Homes
+  </footer>
+
+</body>
+</html>
