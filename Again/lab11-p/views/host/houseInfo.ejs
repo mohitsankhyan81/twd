@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pagetitle %></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header>
+    <h1 class="bg-blue-600 text-white py-6 flex justify-center items-center text-3xl font-bold shadow-md">Fill this form</h1>
+  </header>
+
+  <main class="flex justify-center items-center min-h-screen px-4">
+    <form class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md space-y-4" action="/add-home" method="post">
+      <input type="text" placeholder="Enter your home here" name="houseName" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <input type="text" placeholder="Enter house price" name="price" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <input type="text" placeholder="Enter your location" name="location" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <input type="text" placeholder="Enter your rating" name="rating" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <input type="text" placeholder="Enter your image url" name="url" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
