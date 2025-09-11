@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
   <!-- Navbar -->
   <%- include('../partials/nav') %>
 
   <!-- Hero Image -->
   <section class="relative h-[60vh] bg-cover bg-center" 
-    style="background-image: url('<%= home.url %>');">
+    style="background-image: url('<%= home.url %>');"
     <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white">
       <h1 class="text-5xl font-extrabold mb-4"><%= home.houseName %></h1>
       <p class="text-lg">📍 <%= home.location %></p>
@@ -27,7 +27,10 @@
       <p class="text-gray-700 mb-3"><span class="font-semibold">📍 Location:</span> <%= home.location %></p>
       <p class="text-gray-700 mb-3"><span class="font-semibold">⭐ Rating:</span> <%= home.rating %></p>
       <p class="text-gray-700 mb-6"><span class="font-semibold">📝 Description:</span> <%= home.description || "No description available." %></p>
-
+      <form action="/fav-list" >
+        <button type="submit">Add to fav</button>
+        <input type="hidden" name="id" value ="<%= home.id %>" >
+      </form>
       <!-- Book Now Button -->
       <a href="/book/<%= home.id %>" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition">
         Book Now

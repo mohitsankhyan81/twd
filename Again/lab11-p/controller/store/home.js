@@ -28,7 +28,13 @@ const getHomes = (req, res, next) => {
       res.render("store/home-details", { home: home });
   });
 };
+const postAddtofav=(req,res,next)=>{
+  console.log("come to add to favourite",req.body);
+  res.redirect("/fav-list")
+}
 
+
+exports.postAddtofav=postAddtofav;
 exports.getHomes=getHomes;
 exports.indexvalue=indexvalue;
 exports.homepage=homepage;
