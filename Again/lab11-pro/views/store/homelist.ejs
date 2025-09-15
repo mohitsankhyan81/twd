@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<%- include('../partials/nav') %>
+
+<header>
+  <h1>Welcome to home page</h1>
+</header>
+
+<main>
+  <a href="/add-home">Add home</a>
+</main>
+
+<main>
+  <h1>ALL the registered houses</h1>
+  <ul>
+    <% registerhome.forEach((home) => { %>
+      <li type="none">
+        <br>
+        <%= home.houseName %>
+        <br>
+        <%= home.price %>
+        <br>
+        <%= home.rating %>
+        <br>
+        <%= home.location %>
+        <br>
+        <%= home.url %>
+      </li>
+      <a href="/homes/<%= home.id %>">Details</a>
+        <button>Book</button>
+    <% }) %>
+  </ul>
+</main>
+
+
+
+</body>
+</html>

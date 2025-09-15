@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+  <%- include('../partials/nav') %>
+
+  <h1>
+    Enter your details
+  </h1>
+  <main>
+    <form action="/add-home" method="post">
+      <input type="text" placeholder="Enter details" name="houseName">
+      <input type="text" placeholder="Enter price" name="price">
+      <input type="text" placeholder="rating" name="rating">
+      <input type="text" placeholder="Enter url" name="url">
+      <input type="text" placeholder="location" name="location">
+      <input type="submit">
+    </form>
+  </main>
+</body>
+</html>
