@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+  <header>
+    <h1>THis is the home page</h1>
+  </header>
+  <main>
+    <a href="/add-home">Add home</a>
+  </main>
+  <br>
+  <main>
+    <ul>
+    <% registerhouse.forEach(home=>{ %>
+      <li type="none">
+        <br>
+        <%= home.houseName %>
+        <br>
+        <%= home.price %>
+        <br>
+        <%= home.rating %>
+        <br>
+        <%= home.location %>
+        <br>
+        <%= home.url %>
+      </li>
+      <a href="/homes/<%= home.id %>">Details</a>
+      <button>Book</button>
+   <% }) %>
+   </ul>
+  </main>
+</body>
+</html>
