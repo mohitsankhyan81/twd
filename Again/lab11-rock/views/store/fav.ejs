@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<%- include('../partials/nav') %>
+
+<h1>
+  Here all your fav houses
+</h1>
+<main>
+  <a href="/homes">Go home</a>
+</main>
+
+<ul>
+<% if (registerhouse && registerhouse.length > 0) { %>
+  <% registerhouse.forEach(home => { %>
+    <li>
+      <strong>Name:</strong> <%= home.houseName %> <br>
+      <strong>Price:</strong> <%= home.price %> <br>
+      <strong>Rating:</strong> <%= home.rating %> <br>
+      <strong>URL:</strong> <%= home.url %>
+    </li>
+  <% }) %>
+<% } else { %>
+  <li>No favorite homes found.</li>
+<% } %>
+</ul>
+
+</body>
+</html>
