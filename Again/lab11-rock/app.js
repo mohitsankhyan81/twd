@@ -9,6 +9,8 @@ const rootdir=require('./util/home');
 const storerouter=require('./router/storerouter');
 const {hostrouter}=require('./router/hostrouter');
 
+
+app.use(express.static(path.join(rootdir,"public")));
 app.set('view engine','ejs');
 app.set('views','views');
 const bodyparser=require('body-parser');

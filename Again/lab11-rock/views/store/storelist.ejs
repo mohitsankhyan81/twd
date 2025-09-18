@@ -1,31 +1,42 @@
 <%- include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
 
-  <header>
-    <h1>THis is the home page</h1>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-3xl font-bold text-indigo-600">This is the Home Page</h1>
   </header>
-  <main>
-    <a href="/add-home">Add home</a>
-  </main>
-  <br>
-  <main>
-    <ul>
-    <% registerhouse.forEach(home=>{ %>
-      <li type="none">
-        <br>
-        <%= home.houseName %>
-        <br>
-        <%= home.price %>
-        <br>
-        <%= home.rating %>
-        <br>
-        <%= home.location %>
-        <br>
-        <%= home.url %>
-      </li>
-      <a href="/homes/<%= home.id %>">Details</a>
-   <% }) %>
-   </ul>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <!-- Add Home Button -->
+    <div class="flex justify-end mb-6">
+      <a href="/add-home" 
+         class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+        ➕ Add Home
+      </a>
+    </div>
+
+    <!-- Home Cards -->
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% registerhouse.forEach(home => { %>
+        <li class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-5">
+          <img src="<%= home.url %>" alt="<%= home.houseName %>" 
+               class="w-full h-44 object-cover rounded-md mb-4">
+
+          <h2 class="text-lg font-semibold text-gray-800 mb-2"><%= home.houseName %></h2>
+          <p class="text-gray-600">💰 <%= home.price %></p>
+          <p class="text-gray-600">⭐ <%= home.rating %></p>
+          <p class="text-gray-600">📍 <%= home.location %></p>
+
+          <div class="mt-4">
+            <a href="/homes/<%= home.id %>" 
+               class="inline-block px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition">
+              View Details
+            </a>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
   </main>
 </body>
 </html>

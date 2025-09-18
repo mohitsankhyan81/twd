@@ -1,17 +1,30 @@
 <%- include('../partials/header.ejs') %>
 <%- include('../partials/nav.ejs') %>
 
-<p><strong>Name:</strong> <%= home.houseName %></p>
-<p><strong>Price:</strong> <%= home.price %></p>
-<p><strong>Location:</strong> <%= home.location %></p>
-<p><strong>Image:</strong> <img src="<%= home.url %>" alt="Home image"></p>
-
-<div>
-  <form action="/fav" method="post">
-    <button type="submit">Add to fav</button>
-    <input type="hidden" name="id" value="<%= home.id %>">
-
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-3xl mx-auto mt-10 bg-white shadow-lg rounded-xl overflow-hidden">
+    <img src="<%= home.url %>" alt="Home image" class="w-full h-64 object-cover">
+    <div class="p-6 space-y-3">
+      <p class="text-2xl font-bold text-indigo-700"><%= home.houseName %></p>
+      <p class="text-lg text-gray-700"><strong>💰 Price:</strong> <%= home.price %></p>
+      <p class="text-lg text-gray-700"><strong>📍 Location:</strong> <%= home.location %></p>
+    </div>
+    <div class="p-6 border-t bg-gray-50">
+      <form action="/fav" method="post" class="flex justify-center">
+        <input type="hidden" name="id" value="<%= home.id %>">
+        <button type="submit" class="px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition">
+          ❤️ Add to Favorites
+        </button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

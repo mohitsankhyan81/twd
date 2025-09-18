@@ -1,27 +1,48 @@
 <%- include('../partials/header') %>
 <%- include('../partials/nav') %>
 
-<h1>
-  Here all your fav houses
-</h1>
-<main>
-  <a href="/homes">Go home</a>
-</main>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <h1 class="text-3xl font-bold text-indigo-600 text-center mt-8">
+    Here are all your Favorite Houses
+  </h1>
 
-<ul>
-<% if (registerhouse && registerhouse.length > 0) { %>
-  <% registerhouse.forEach(home => { %>
-    <li>
-      <strong>Name:</strong> <%= home.houseName %> <br>
-      <strong>Price:</strong> <%= home.price %> <br>
-      <strong>Rating:</strong> <%= home.rating %> <br>
-      <strong>URL:</strong> <%= home.url %>
-    </li>
-  <% }) %>
-<% } else { %>
-  <li>No favorite homes found.</li>
-<% } %>
-</ul>
+  <!-- Go Home Button -->
+  <main class="flex justify-center mt-6">
+    <a href="/homes" 
+       class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+      🏠 Go Home
+    </a>
+  </main>
 
+  <!-- House List -->
+  <ul class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+    <% if (registerhouse && registerhouse.length > 0) { %>
+      <% registerhouse.forEach(home => { %>
+        <li class="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
+          <!-- House Image -->
+          <img src="<%= home.url %>" alt="<%= home.houseName %>" 
+               class="w-full h-48 object-cover">
+          
+          <!-- House Info -->
+          <div class="p-5">
+            <h2 class="text-xl font-semibold text-gray-900 mb-2"><%= home.houseName %></h2>
+            <p class="text-gray-600"><strong>💰 Price:</strong> <%= home.price %></p>
+            <p class="text-gray-600"><strong>⭐ Rating:</strong> <%= home.rating %></p>
+            
+            <!-- Button -->
+            <a href="/homes/<%= home.id %>" 
+               class="inline-block mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+              View Details
+            </a>
+          </div>
+        </li>
+      <% }) %>
+    <% } else { %>
+      <li class="col-span-full text-center bg-white rounded-lg shadow p-6">
+        No favorite homes found.
+      </li>
+    <% } %>
+  </ul>
 </body>
 </html>
