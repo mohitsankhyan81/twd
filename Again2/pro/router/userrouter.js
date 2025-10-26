@@ -3,9 +3,11 @@ const express=require('express');
 const userrouter=express.Router();
 const path=require('path');
 const rootdir=require('../util/path');
+const { registeredhouse } = require('./hostrouter');
 
 userrouter.get("/",(req,res,next)=>{
-  res.sendFile(path.join(rootdir,'views/store','home.html'));
+  console.log(registeredhouse);
+  res.render('store/home',{registeredhouse:registeredhouse});
 })
 
 module.exports=userrouter;
