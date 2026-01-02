@@ -12,4 +12,4 @@ userrouter.get("/",(req,res,next)=>{
   res.render('home',{registeredhouse:registeredhouse})
 });
 
-module.exports=userrouter;
+ module.exports=userrouter;
